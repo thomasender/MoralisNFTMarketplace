@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
+    <link rel="stylesheet" href="main.css">
+    <title>MyRarible</title>
+</head>
+<body class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent border-bottom border-light">
+        <div class="container-fluid">
+          <a class="navbar-brand btn btn-outline-motd" href="#">MyRarible</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="mx-2 d-inline flex-md-fill">
+              <input type="search" class="bg-transparent border-light form-control text-light mr-sm-2 rounded-pill" placeholder="Search...">
+          </form>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mr-auto">
+              <li class="nav-item">
+               
+              </li>
+            </ul>
+            <div class="d-flex">
+                <a class="nav-link active" id="btnMyItems" href="#">My Items</a>
+                <button class="btn btn-primary rounded-pill my-2 my-sm-0 mr-md-2" id="btnOpenCreateItem">Create</button>        
+                <button class="btn btn-outline-motd rounded-pill my-2 my-sm-0" id="btnConnect">Connect</button>
+                <button class="btn btn-outline-motd rounded-pill my-2 my-sm-0" id="btnProfileInfo">Profile</button>
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 mt-5" id="itemsForSale">
+
+        </div>
+      </div>
+
+      <div class="col mb-4" id="marketplaceItemTemplate">
+        <div class="card h-100 b-light bg-transparent text-light">
+            <nav class="card-header navbar navbar-dark text-light p-1">
+                <img src="" alt="">
+                <span></span>
+            </nav>
+  
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body d-flex align-items-end">
+                <div class="w-100   ">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
+                    <button class="btn btn-primary"></button>
+                </div>
+            </div>
+          </div>
+     </div>
+   
+     <!-- Modal -->
+<div class="modal fade" id="userInfo" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title">My Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" id="textUsername" required placeholder="Enter Username"> 
+            <input type="text" id="textEmail" placeholder="Enter E-Mail">
+            <small>Optional</small> 
+    
+            <img width="50" height="50" src="/" id="imgAvatar" alt="Avatar">
+            <label for="fileAvatar">Select Avatar</label>
+            <input type="file" id="fileAvatar">
+    
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnSaveUserInfo" class="btn btn-primary">Save</button>
+          <button type="button" id="btnCloseUserInfo" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="btnLogout" class="btn btn-secondary" data-bs-dismiss="modal">Log out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="createItem">
+        <h4>Create Item</h4>
+        <input type="text" id="textCreateItemName" required placeholder="Enter Item Name">
+        <textarea id="textCreateItemDescription" cols="30" rows="5" placeholder="Enter Description"></textarea>
+        <input type="number" min="1" step="1" id="numberCreateItemPrice" placeholder="Enter price" required>
+        
+        <label for="selectCreateItemStatus">Status</label>
+        <select id="selectCreateItemStatus">
+            <option value="0">Not For Sale</option>
+            <option value="1">Instant Buy</option>
+            <option value="2">Accept Offers</option>
+        </select>
+
+        <label for="fileCreateItemFile">Select File</label>
+        <input type="file" id="fileCreateItemFile">
+
+        <button id="btnCloseCreateItem">Close</button>
+        <button id="btnCreateItem">Create!</button>
+    </div>
+
+    <div id="userItems">
+        <h4>My Items</h4>
+        <div id="userItemsList"></div>
+        <button id="btnCloseUserItems">Close</button>
+    </div>
+
+    <div id="itemTemplate">
+        <img src="" alt="">
+        <h5></h5>
+        <p></p>
+        <input type="number" min="1" step="1">
+        <button>Put On Sale!</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="abi.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>    
+</body>
+</html>
